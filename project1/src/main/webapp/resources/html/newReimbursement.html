@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+	crossorigin="anonymous">
+</head>
+<body>
+	<!--  we need to get the int amount,string description, string typeid -->
+	<form method = "post" action="/project1/Customer/newReimbursement/">
+		<div class="mb-3">
+			<label for="exampleFormControlInput1" class="form-label">
+				Amount </label> <input type="text" class="form-control" id="amount" name = "amount" value ="0.00">
+		</div>
+		<div class="mb-3">
+			<label for="exampleFormControlTextarea1" class="form-label">
+				Description </label>
+			<textarea class="form-control" id="description" rows="3" name = "description">
+			</textarea>
+		</div>
+		<label for="exampleFormControlTextarea1" class="form-label">
+			ReimbursementType </label> <select class="form-select"
+			aria-label="Default select example" name ="reimbursementType">
+			<option value="1">LODGING</option>
+			<option value="2">TRAVEL</option>
+			<option value="3">FOOD</option>
+			<option value="4">OTHER</option>
+		</select>
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+</body>
+</html>
