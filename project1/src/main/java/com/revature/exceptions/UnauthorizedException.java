@@ -11,7 +11,8 @@ public class UnauthorizedException extends RuntimeException {
 	 */
 	private static final long serialVersionUID = 1L;
 	public void writeToLog() {
-		ERS_Driver.logger.debug("UnauthorizedException was thrown");
+		ERS_Driver.logger.error("UnauthorizedException was thrown");
 	}
 	
 }
+ 

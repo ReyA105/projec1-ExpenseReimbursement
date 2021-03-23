@@ -28,6 +28,9 @@ public class EmployeeServlet extends HttpServlet{
 		 switch(req.getRequestURI()) {
 		 case "/project1/Employee/home":
 			 return EmployeeController.home(req);
+		 case "/project1/Employee/updateReimbursement":
+			 EmployeeController.updateReimbursements(req);
+			 return "/project1/resources/html/employeeHome.html";
 		 }
 		 return null;
 	 }

@@ -1,0 +1,13 @@
+2021-03-18 21:37:53 DEBUG LoginController:36 - Log4j appender configuration is successful !!
+2021-03-18 21:40:32 DEBUG LoginController:35 - Tried logging in with incorrect credentials
+2021-03-18 21:40:47 DEBUG LoginController:35 - Tried logging in with incorrect credentials
+2021-03-18 21:41:01 DEBUG LoginController:35 - Tried logging in with incorrect credentials
+2021-03-18 21:41:10 DEBUG LoginController:35 - Tried logging in with incorrect credentials
+2021-03-18 21:41:23 DEBUG LoginController:35 - Tried logging in with incorrect credentials
+2021-03-18 21:42:21 DEBUG LoginController:35 - Tried logging in with incorrect credentials
+2021-03-18 21:43:22 DEBUG LoginController:35 - Tried logging in with incorrect credentials
+2021-03-18 21:46:11 DEBUG LoginController:35 - Tried logging in with incorrect credentials
+2021-03-18 21:46:38 DEBUG LoginController:33 - Tried logging in with incorrect credentials
+2021-03-18 21:52:26 DEBUG CustomerServlet:33 - Tried to submit with no user logged in
+2021-03-19 09:03:02 DEBUG LoginController:33 - Tried logging in with incorrect credentials
+2021-03-19 09:19:46 DEBUG LoginController:33 - Tried logging in with incorrect credentials

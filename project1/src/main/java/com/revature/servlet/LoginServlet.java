@@ -24,7 +24,13 @@ public class LoginServlet  extends HttpServlet{
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException{
-		req.getRequestDispatcher(LoginController.login(req)).forward(req, res);
+		if(req.getRequestURI().equals("/project1/login"))
+			req.getRequestDispatcher(LoginController.login(req)).forward(req, res);
+		else if(req.getRequestURI().equals("/project1/logout")) {
+				req.getSession().invalidate();
+				res.sendRedirect("resources/html/login.html");
+		}
 	}
 	
 }
+ 

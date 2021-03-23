@@ -16,8 +16,6 @@ function getPastReimbursement() {
 			DOMManipulation(pastJSON);
 		}
 	}
-
-
 	xhr.open("POST", "http://localhost:8080/project1/PastReimbursements.json");
 	xhr.send();
 }
@@ -50,10 +48,17 @@ function DOMManipulation(pastJSON) {
 		let newText2 = document.createTextNode(`${obj.amount}`);
 		cell2.appendChild(newText2);
 
-		let newText3 = document.createTextNode(`${obj.submitted}`);
+		let newText3 = document.createTextNode(`${new Date(obj.submitted)}`);
 		cell3.appendChild(newText3);
 
-		let newText4 = document.createTextNode(`${obj.resolved}`);
+		let newText4
+		if (obj.resolved == null) {
+			newText4 = document.createTextNode("IN PROGRESS");
+		}
+		else {
+			newText4 = document.createTextNode(`${new Date(obj.resolved)}`);
+		}
+
 		cell4.appendChild(newText4);
 
 		let newText5 = document.createTextNode(`${obj.description}`);

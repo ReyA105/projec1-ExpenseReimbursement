@@ -26,13 +26,18 @@ public class UserService {
 	public User login(String username, String password) {
 		User user = new User();
 		user = userDao.getUser(username, password);
-		if(user == null)
+		System.out.println(user);
+		if(user == null) {
 			throw new InvalidCredentialsException();
+		}
+		if(user.getPassword() == null)
+			throw new InvalidCredentialsException();
+		
 		if(!user.getPassword().equals(password))
 			throw new InvalidCredentialsException();
 		SessionCache.setCurrentUser(user);
 		return user;
-	}
+	} 
 	
 	/**
 	 * Creates the specified User in the persistence layer

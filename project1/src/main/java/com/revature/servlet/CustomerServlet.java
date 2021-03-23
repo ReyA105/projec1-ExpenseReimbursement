@@ -7,8 +7,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.revature.Controller.CustomerController;
+import com.revature.Controller.EmployeeController;
 import com.revature.Controller.LoginController;
 
 public class CustomerServlet extends HttpServlet{
@@ -16,6 +19,8 @@ public class CustomerServlet extends HttpServlet{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	static Logger logger = Logger.getLogger(CustomerServlet.class);
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException{
 		System.out.println("in doGet customer");
@@ -23,6 +28,14 @@ public class CustomerServlet extends HttpServlet{
 	}
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException{
+		if(req.getSession(false) == null) {
+			try {
+				logger.debug("Tried to submit with no user logged in");
+				res.sendRedirect("/project1/resources/html/login.html");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 		String URI = process(req);
 		res.sendRedirect(URI);
 		
@@ -38,3 +51,4 @@ public class CustomerServlet extends HttpServlet{
 		 return null;
 	 }
 }
+ 

@@ -34,7 +34,7 @@ public class CustomerController {
 			e.printStackTrace();
 		}
 	}	
-	
+	 
 	public static void addReimbursement(HttpServletRequest req){
 		User currentUser =  (User) req.getSession().getAttribute("loggedUser");
 		Reimbursement newReimb = new Reimbursement();

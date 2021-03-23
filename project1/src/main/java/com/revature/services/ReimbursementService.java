@@ -31,12 +31,10 @@ public class ReimbursementService {
 	// approveDenyReimbursement
 
 	public boolean approveDenyReimbursement(Reimbursement reimb, boolean approval, int resolverID) {
-		Optional<User> opt = SessionCache.getCurrentUser();
-		User currentUser = opt.get();
-
-		if (UserRole.getUserRoleID(currentUser.getUserRoleId()) == UserRole.UserRoleID.EMPLOYEE)
-			throw new UnauthorizedException();
-
+		if (approval)
+			reimb.setStatusid(2);
+		else
+			reimb.setStatusid(3);
 		reimb.setResolverid(resolverID);
 		reimb.setResolved(Timestamp.from(Instant.now().truncatedTo(ChronoUnit.MINUTES)));
 		reimbDao.updateReimbursement(reimb);
@@ -48,7 +46,7 @@ public class ReimbursementService {
 	public List<Reimbursement> viewAllReimbursements() {
 		List<Reimbursement> allReimbursements = new ArrayList<Reimbursement>();
 		allReimbursements = reimbDao.getAllReimbursement();
-	
+
 		return allReimbursements;
 	}
 
@@ -60,13 +58,13 @@ public class ReimbursementService {
 	}
 
 	// add new reimbursement
-	public void addNewReimbursement(Reimbursement newReimb) {
+	public boolean addNewReimbursement(Reimbursement newReimb) {
 		List<Reimbursement> reimbList = new ArrayList<Reimbursement>();
 		reimbList = reimbDao.getAllReimbursement();
 		newReimb.setReimbId(reimbList.size() + 1);
 		newReimb.setSubmitted(Timestamp.from(Instant.now().truncatedTo(ChronoUnit.MINUTES)));
 		newReimb.setStatusid(1);
 		reimbDao.addReimbursement(newReimb);
-
+		return true;
 	}
 }

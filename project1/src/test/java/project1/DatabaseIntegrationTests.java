@@ -14,6 +14,7 @@ import java.util.List;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 
@@ -24,7 +25,7 @@ import com.revature.dao.ReimbursementDaoDB;
 import com.revature.dao.UserDao;
 import com.revature.dao.UserDaoDB;
 
-
+@Ignore
 public class DatabaseIntegrationTests {
 	ReimbursementDao rdao = new ReimbursementDaoDB();
 	Reimbursement testReimbursement = new Reimbursement();

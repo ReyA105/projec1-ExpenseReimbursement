@@ -2,24 +2,114 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Employee Home</title>
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
-	crossorigin="anonymous">
+<title>Manager Home</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Recursive:wght@300&display=swap" rel="stylesheet">
+
+<style>
+body {
+	background-color: #f69b6d;
+	font-family: 'Recursive', sans-serif;
+}
+
+button {
+	cursor: pointer;
+	border-radius: 5em;
+	color: #fff;
+	background: linear-gradient(to right, #9C27B0, #E040FB);
+	border: 0;
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	margin: 3px; 
+	font-size: 13px;
+	box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+	
+}
+
+thead tr {
+	color: #ffffff;
+	text-align: left;
+}
+
+th, td {
+	padding: 12px 15px;
+
+}
+
+tbody tr {
+	border-bottom: 1px solid #dddddd;
+}
+
+table {
+	border-spacing: 1;
+	border-collapse: collapse;
+	background: #A0DBF9 ;
+	border-radius: 10px;
+	overflow: hidden;
+	width: 100%;
+	margin: 0 auto;
+}
+
+table td, table th {
+	padding-left: 8px;
+	color: black;
+}
+
+table thead tr {
+	height: 60px;
+		
+}
+
+table tbody tr {
+	height: 50px
+}
+
+table td, table th {
+	text-align: left
+}
+
+table td.l, table th.l {
+	text-align: right
+}
+
+table td.c, table th.c {
+	text-align: center
+}
+
+table td.r, table th.r {
+	text-align: center
+}
+
+table th {
+	font-size: 18px;
+	line-height: 1.2;
+	font-weight: unset
+	
+}
+
+tbody tr {
+	font-size: 15px;
+	color: gray;
+	line-height: 1.2;
+	font-weight: unset
+}
+</style>
 </head>
 <body>
-	<h1>EmployeeHome</h1>
-
+	<h1>Manager Home</h1>
+		<form method = "post" action="/project1/logout">
+			<button type="submit" class="btn btn-primary" id="logoutbtn">
+			Log Out		
+			</button>
+		</form>
 		<label for="exampleFormControlTextarea1" class="form-label">
-			Select which Reimbursement type you would like to see</label> <select class="form-select"
+			Select which Reimbursement status you would like to see</label> <select class="form-select"
 			aria-label="Default select example" name ="reimbursementType" id ="selectType">
-			<option value="1">LODGING</option>
-			<option value="2">TRAVEL</option>
-			<option value="3">FOOD</option>
-			<option value="4">OTHER</option>
-			<option value="5">ALL</option>
+			<option value="1">PENDING</option>
+			<option value="2">APPROVAL</option>
+			<option value="3">DENIED</option>
 		</select>
 		<button type="submit" class="btn btn-primary" id="viewReimbursement">View
 		All Reimbursement claims</button>
@@ -39,16 +129,14 @@
 		<tbody id = "reimbursementBody"></tbody>
 	</table>
 	
-	
-	<!--  TODO  -->
-	<form>
+	<form method = "post" action="/project1/Employee/updateReimbursement">
 	<select class="form-select"
 			aria-label="Default select example" name ="reimbursementID" id ="reimbChoose" style="visibility:hidden">
 	</select>	
 	<select class="form-select"
 			aria-label="Default select example" name ="newReimbursementStatus" id ="reimbStatusChange" style="visibility:hidden">
-			<option value="1">APPROVE</option>
-			<option value="2">DENY</option>
+			<option value="2">APPROVE</option>
+			<option value="3">DENY</option>
 	</select>
 		<button type="submit" style="visibility:hidden" id ="approveDenyButton">submit</button>
 	</form>

@@ -31,7 +31,7 @@ public class ERS_Driver {
 		udao.addUser(utemp);
 		
 		utemp.setId(2);
-		utemp.setEmail("te@gmail.com");
+		utemp.setEmail("te@gmail.com"); 
 		utemp.setFirstName("t");
 		utemp.setLastName("e");
 		utemp.setPassword("tempPassword");
