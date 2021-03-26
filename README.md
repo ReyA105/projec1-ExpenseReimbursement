@@ -28,7 +28,16 @@ To-do list:
 * Creating a way for Managers to create a reimbursement for themselves
 * Prevent Managers from approving their own reimbursements
 
-## License
+## Getting Started / Usage
+In order to see this project in action, you will need a few things:
 
-This project uses the following license: [<license_name>](<link>).
+1) Be sure to have Apache Tomcat 9.0 installed.
+2) Be sure to have the Java 8 runtime environment installed.
+
+If both of the pre-requisites above are met, go ahead and clone this repo by using the below command:
+
+        git clone https://github.com/ReyA105/projec1-ExpenseReimbursement.git
+
+Once the .war has been exploded, by default you will be able to view the application at http://localhost:8999/Project1/
+-You also need to set your tomcat to listen to port 8999
 
